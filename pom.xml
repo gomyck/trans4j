@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.gomyck</groupId>
+    <artifactId>gomyck-quickdev</artifactId>
+    <version>2.0.3-RELEASE</version>
+  </parent>
+
+  <name>trans4j</name>
+  <packaging>pom</packaging>
+  <artifactId>trans4j</artifactId>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.gomyck</groupId>
+        <artifactId>trans4j-context</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.gomyck</groupId>
+        <artifactId>trans4j-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.gomyck</groupId>
+        <artifactId>trans4j-ext-mybatis</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.gomyck</groupId>
+        <artifactId>trans4j-ext-rest-api</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.gomyck</groupId>
+        <artifactId>trans4j-spring-boot-starter</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.gomyck</groupId>
+        <artifactId>trans4j-ext-spring-mvc</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>trans4j-spring-boot-starter</module>
+    <module>trans4j-core</module>
+    <module>trans4j-context</module>
+    <module>trans4j-ext-spring-mvc</module>
+    <module>trans4j-ext-mybatis</module>
+    <module>trans4j-ext-rest-api</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <id>develop-trans4j</id>
+      <repositories>
+        <repository>
+          <id>sonatype-Release</id>
+          <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+        <repository>
+          <id>sonatype-Snapshot</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+</project>
