@@ -1,0 +1,26 @@
+/*
+ * Copyright [2024] [trans4j@gomyck.com]
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.gomyck.trans4j.handler.dictionary.serialize;
+
+/**
+ * 翻译的前置动作, 将原始数据进行一次清洗后, 才进行翻译动作
+ */
+public interface AutoEncoder {
+
+  Object encode(Object input);
+
+}
